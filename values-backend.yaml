@@ -39,10 +39,10 @@ istio:
   enabled: false
 
 ingress:
-  enabled: true
+  enabled: false
   ingressClass: nginx
   hosts:
-    - host: pactbroker.sonam.cloud
+    - host: springclouddiscoveryservice.sonam.cloud
       paths:
         - path: /
           pathType: Prefix
@@ -68,13 +68,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-postgres:
-  port: "5432"
-  postgresUsername: PACT_BROKER_DATABASE_USERNAME
-  postgresPassword: PACT_BROKER_DATABASE_PASSWORD
-  postgresDbname: PACT_BROKER_DATABASE_NAME
-
-envs:
-  - name: PACT_BROKER_DATABASE_HOST
-    value: pactbroker-minimal-cluster
