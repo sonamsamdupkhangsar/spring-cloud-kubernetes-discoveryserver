@@ -32,8 +32,5 @@ jobs:
             --set "image.repository=springcloud/spring-cloud-kubernetes-discoveryserver" \
             --set "image.tag=3.0.5-SNAPSHOT" \
             --set "project=$PROJECT_NAME" \
-            --set "postgres.secretfile=${{ secrets.POSTGRES_SECRET_FILE }}" \
-            --set "postgres.service=${{ secrets.POSTGRES_SERVICE }}" \
-            --set "postgres.dbname=${{ secrets.POSTGRES_DBNAME }}" \
              $PROJECT_NAME \
             sonam/mychart -f values-backend.yaml --version 0.1.26 --namespace=backend
